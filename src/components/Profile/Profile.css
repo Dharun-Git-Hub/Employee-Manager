@@ -1,0 +1,104 @@
+.profile-cont{
+    user-select: none;
+    width: 80vw;
+    height: 15vh;
+    position: fixed;
+    top: 12vh;
+    left: 20vw;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+.profile-cont span{
+    user-select: none;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(18, 17, 17);
+    font-weight: bold;
+    margin-left: 10px;
+}
+.profile-ui{
+    user-select: none;
+    width: 80vw;
+    height: 72vh;
+    position: absolute;
+    top: 28vh;
+    left: 20vw;
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    font-size: 2rem;
+    flex-direction: column;
+}
+.main-img{
+    cursor: pointer;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 7px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.profile-actions{
+    background-color: white;
+    width: 80vw;
+    height: calc(72vh - 10vw);
+}
+.profile-section .profile-left, .profile-right{
+    position: absolute;
+    top: 24vh;
+    width: 40vw;
+    height: calc(72vh - 10vw);
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    background-color: white;
+}
+.profile-right{
+    position: absolute;
+    top: 24vh;
+    left: 40vw;
+    background-color: white;
+}
+.profile-right label, .profile-left label, .profile-right input, .profile-left input{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+.profile-right input, .profile-left input{
+    border-radius: 6px;
+    border-bottom-color: 1px solid grey;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+.profile-right input:hover, .profile-left input:hover{
+    border:2px solid grey;
+}
+.profile-left button{
+    margin: 30px;
+    background-color: #a445ed;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+}
+.profile-right input:disabled, .profile-left input:disabled{
+    background-color: grey;
+    color: white;
+    cursor: no-drop;
+}
+.profile-left button:disabled{
+    background-color: grey;
+    cursor: no-drop;
+}

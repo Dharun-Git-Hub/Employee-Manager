@@ -1,0 +1,99 @@
+.dash-nav{
+    color: rgb(0, 133,255);
+    height: 12vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.3rem;
+    border-bottom: grey 1px solid;
+    z-index: 10;
+}
+.dash-side-cont{
+    z-index: 10;
+    user-select: none;
+    position: fixed;
+    top: 12vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    width: 20vw;
+    border-right: 1px solid grey;
+}
+ul{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: grey;
+    list-style-type: none;
+    position: fixed;
+    left: -2vw;
+}
+li{
+    margin: 10px;
+    cursor: pointer;
+    transition-behavior: smooth;
+}
+li:hover{
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: rgb(0, 133,255);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 50px;
+}
+.active-li{
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: rgb(0, 133,255);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 50px;
+}
+li::marker{
+    color: white;
+    font-size: 1.5rem;
+}
+.nav-navigations{
+    user-select: none;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-right: 4px;
+    border: 1px solid grey;
+}
+.nav-navigations img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.logout{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: red;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 50px;
+    border: 1px solid grey;
+}
+.logout:hover{
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px 50px;
+}

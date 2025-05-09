@@ -1,0 +1,32 @@
+.mainpage-cont{
+    top: 12vh;
+    left: 20vw;
+    position: fixed;
+    width: 80vw;
+    height: 88vh;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.mainpage-cont .card1, .mainpage-cont .card2{
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    margin: 50px;
+    box-shadow: 0 0 13px grey;
+    background: linear-gradient(to bottom right, blue, purple, #ff2976, red, yellow);
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mainpage-cont .card1:hover, .mainpage-cont .card2:hover{
+    box-shadow: 0 0 10px #ff2976;
+}

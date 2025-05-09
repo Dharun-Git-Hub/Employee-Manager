@@ -1,0 +1,95 @@
+.employees-cont{
+    top: 12vh;
+    left: 20vw;
+    position: fixed;
+    width: 80vw;
+    height: 88vh;
+    user-select: none;
+}
+.employee-1-cont{
+    width: 80vw;
+    height: 15vh;
+    position: fixed;
+    top: 12vh;
+    left: 20vw;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.employee-1-cont input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin-right: 50px;
+    border: 0.2 px solid grey;
+    background-color: rgb(240, 240, 240);
+}
+.employee-1-cont button{
+    background-color: rgb(0, 133, 255);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+.employee-1-cont input:focus{
+    border: 0.2 px solid rgb(0, 133, 255);
+    background-color: white;
+}
+.employee-1-cont span{
+    user-select: none;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(18, 17, 17);
+    font-weight: bold;
+    margin-left: 10px;
+}
+.employee-2-cont{
+    width: 80vw;
+    height: 73vh;
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.employee-2-cont .employee-list-cont{
+    width: 97%;
+    height: fit-content;
+    background-color: white;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.employee-table{
+    width: 100%;
+}
+.employee-table th, .employee-table td{
+    background-color: white;
+    color: grey;
+    padding: 10px;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.employee-table td{
+        border-bottom: 1px solid rgb(240, 240, 240);
+        color: rgb(18, 17, 17);
+        font-size: 1.1rem;
+        padding: 20px;
+}
