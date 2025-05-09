@@ -10,17 +10,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'employee_db',
-});
-
-db.connect(err => {
-    if (err) console.log(err);
-    console.log("Connected to MySQL!");
-});
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -33,6 +22,71 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const uploads = multer({ storage: storage });
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: ''
+});
+
+db.query('CREATE DATABASE IF NOT EXISTS employee_db', (err) => {
+    if (err) {
+        console.error('Error creating database:', err);
+        return;
+    }
+    console.log('Database checked/created.');
+
+    db.changeUser({ database: 'employee_db' }, (err) => {
+        if (err) {
+            console.error('Error changing database:', err);
+            return;
+        }
+
+        console.log('Using employee_db.');
+
+        const createEmployeesTable = `
+            CREATE TABLE IF NOT EXISTS employees (
+                employee_id INT(11) NOT NULL AUTO_INCREMENT,
+                employee_name VARCHAR(100) NOT NULL,
+                department VARCHAR(100),
+                designation VARCHAR(100),
+                project VARCHAR(100) DEFAULT '-',
+                type VARCHAR(50) DEFAULT '-',
+                status VARCHAR(50),
+                PRIMARY KEY (employee_id)
+            )
+        `;
+
+        db.query(createEmployeesTable, (err) => {
+            if (err) {
+                console.error('Error creating employees table:', err);
+            } else {
+                console.log('Employees table ready.');
+            }
+        });
+
+        const createUsersTable = `
+            CREATE TABLE IF NOT EXISTS users (
+                id INT(11) NOT NULL AUTO_INCREMENT,
+                username VARCHAR(100),
+                password VARCHAR(100),
+                department VARCHAR(100),
+                designation VARCHAR(100),
+                contact_number VARCHAR(100),
+                PRIMARY KEY (id)
+            )
+        `;
+
+        db.query(createUsersTable, (err) => {
+            if (err) {
+                console.error('Error creating users table:', err);
+            } else {
+                console.log('Users table ready.');
+            }
+        });
+    });
+});
+
 
 app.post('/signup', (req, res) => {
     const { username, password, department, designation, contact_number } = req.body;
@@ -118,7 +172,7 @@ app.put('/api/employees/:id', (req, res) => {
       status
     } = req.body;
 
-    if (!employee_name || !department || !designation || !project || !type || !status) {
+    if (!employee_name || !department || !designation) {
         return res.status(400).json({ error: 'All fields are required' });
     }
 
